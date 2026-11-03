@@ -57,13 +57,20 @@ export default function SignUpPage() {
 
   const handleSocialSignUp = async (provider: "google") => {
     try {
-      toast.loading("Google-এ সংযোগ করা হচ্ছে...", { duration: 1500 });
-      await authClient.signIn.social({
+      toast.loading("Google-এ সংযোগ করা হচ্ছে...", { duration: 2000 });
+      const res = await authClient.signIn.social({
         provider,
         callbackURL: "/",
       });
+      if (res?.error) {
+        toast.error(res.error.message || "Google দিয়ে সাইন আপ সফল হয়নি");
+        return;
+      }
+      if (res?.data?.url) {
+        window.location.href = res.data.url;
+      }
     } catch (err: any) {
-      toast.error("Google দিয়ে সাইন আপ সফল হয়নি");
+      toast.error(err?.message || "Google দিয়ে সাইন আপ সফল হয়নি");
     }
   };
 
