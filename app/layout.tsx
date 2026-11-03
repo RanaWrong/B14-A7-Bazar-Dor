@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://b14-a7-bazar-dor-blond.vercel.app"),
   title: "বাজার দর (Bazar Dor) — প্রয়োজনীয় পণ্যের দাম এক নজরে",
   description: "চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন ও সর্বাধিক দাম।",
 };
