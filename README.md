@@ -14,8 +14,8 @@
 
 ## 🚀 লাইভ ডেমো এবং গিটহাব লিংক (Submission Links)
 
-* **লাইভ সাইট ইউআরএল (Live Link)**: https://bazardor.vercel.app *(বা আপনার ডেপ্লয়মেন্ট লিংক)*
-* **গিটহাব রিপোজিটরি (GitHub Repo)**: https://github.com/your-username/B14-A7-Bazar-Dor
+* **লাইভ সাইট ইউআরএল (Live Link)**: https://b14-a7-bazar-dor-blond.vercel.app/
+* **গিটহাব রিপোজিটরি (GitHub Repo)**: https://github.com/RanaWrong/B14-A7-Bazar-Dor
 
 ---
 
@@ -32,7 +32,7 @@
    - বাংলা সংখ্যার নির্ভুল নিউমেরিক্যাল সর্টিং (`ডিফল্ট`, `দাম: কম থেকে বেশি`, `দাম: বেশি থেকে কম`)।
 
 4. **BetterAuth ভিত্তিক নিরাপদ প্রমাণীকরণ ও রুট সুরক্ষা (Authentication & Protected Routes)**:
-   - BetterAuth এর মাধ্যমে ইমেইল/পাসওয়ার্ড ও সোশ্যাল লগইন (Google/GitHub) সমর্থন।
+   - BetterAuth এর মাধ্যমে ইমেইল/পাসওয়ার্ড ও সোশ্যাল লগইন (Google) সমর্থন।
    - লগইন, সাইন আপ, লগআউট ও ভ্যালিডেশন এর জন্য সুন্দর `react-hot-toast` নোটিফিকেশন।
    - বিস্তারিত পণ্যের তথ্য রুট (`/product/[slug]`) লগইন ছাড়া সুরক্ষিত।
 
@@ -57,7 +57,7 @@
 
 ### ১. রিপোজিটরি ক্লোন করুন
 ```bash
-git clone https://github.com/your-username/B14-A7-Bazar-Dor.git
+git clone https://github.com/RanaWrong/B14-A7-Bazar-Dor.git
 cd B14-A7-Bazar-Dor
 ```
 

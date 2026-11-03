@@ -25,7 +25,12 @@ if (process.env.MONGODB_URI) {
 
 export const auth = betterAuth({
   secret: process.env.BETTER_AUTH_SECRET || "REMOVED_SECRET",
-  baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3000",
+  baseURL: process.env.BETTER_AUTH_URL || "https://b14-a7-bazar-dor-blond.vercel.app",
+  trustedOrigins: [
+    "https://b14-a7-bazar-dor-blond.vercel.app",
+    "http://localhost:3000",
+    ...(process.env.NEXT_PUBLIC_APP_URL ? [process.env.NEXT_PUBLIC_APP_URL] : []),
+  ],
   ...(dbAdapter ? { database: dbAdapter } : {}),
   emailAndPassword: {
     enabled: true,
