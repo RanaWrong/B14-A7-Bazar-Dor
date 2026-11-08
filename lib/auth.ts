@@ -23,8 +23,22 @@ if (process.env.MONGODB_URI) {
   }
 }
 
+// No fallback secret: a value committed to this public repository would let anyone forge sessions.
+// better-auth also refuses to start without BETTER_AUTH_SECRET; this check makes the reason explicit.
+const betterAuthSecret = process.env.BETTER_AUTH_SECRET;
+if (betterAuthSecret && /^your-|changeme|example/i.test(betterAuthSecret)) {
+  throw new Error("BETTER_AUTH_SECRET is a placeholder. Generate one: openssl rand -base64 48");
+}
+if (
+  !betterAuthSecret &&
+  process.env.NODE_ENV === "production" &&
+  process.env.NEXT_PHASE !== "phase-production-build"
+) {
+  throw new Error("BETTER_AUTH_SECRET is required in production.");
+}
+
 export const auth = betterAuth({
-  secret: process.env.BETTER_AUTH_SECRET || "REMOVED_SECRET",
+  secret: betterAuthSecret,
   baseURL: process.env.BETTER_AUTH_URL || "https://b14-a7-bazar-dor-blond.vercel.app",
   trustedOrigins: [
     "https://b14-a7-bazar-dor-blond.vercel.app",

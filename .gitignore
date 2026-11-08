@@ -31,3 +31,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+# Environment secrets (security hardening)
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
